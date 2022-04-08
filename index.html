@@ -1,3 +1,10 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 <style>
   div {
     font-size: 72px;
@@ -5,12 +12,48 @@
     background-color: rebeccapurple;
     color: #ffffff;
   }
+  button {
+    margin: 20px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    background-color: rebeccapurple;
+    color: #ffffff;
+    font-weight: bold;
+    border-color: rebeccapurple;
+    border-radius: 4px;
+  }
 </style>
 
 <div>
   Dice Roller coming to a roll near you.
 </div>
-
+<button onclick="handleButtonClick()">
+  Click Me!
+</button>
+<div id="result">
+  0
+</div>
 <script>
-  alert("The dice rolled a dirty 20");
+  function rollADice(max) {
+    return Math.floor(Math.random() * max) + 1;
+  }
+  function displayResult(result) {
+    //    - Select element to display the result
+    const elem = document.getElementById("result");
+    //    - Change the text to the results
+    elem.innerHTML = result;
+  }
+  // 1. Handle button being clicked
+  function handleButtonClick() {
+    // 2. Get result of a dice roll
+    const result = rollADice(6);
+    // 3. console.log() the result
+    console.log(result);
+    // 4. Display the result
+    displayResult(result);
+  }
 </script>
+
+<!-- 
+
+ -->
